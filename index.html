@@ -7,7 +7,7 @@
   <style>
     body {
       font-family: "Poppins", sans-serif;
-      background: linear-gradient(135deg, #232526, #414345);
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
       color: #fff;
       display: flex;
       align-items: center;
@@ -17,18 +17,18 @@
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(10px);
       border-radius: 20px;
       padding: 40px;
       width: 320px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .container:hover {
       transform: scale(1.03);
-      box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.6);
     }
 
     h2 {
@@ -81,6 +81,46 @@
       cursor: pointer;
       text-decoration: underline;
     }
+
+    /* === Popup Custom === */
+    .popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.8);
+      border: 1px solid #00ffff;
+      border-radius: 15px;
+      padding: 20px 30px;
+      color: #00ffff;
+      text-align: center;
+      box-shadow: 0 0 20px #00ffff;
+      z-index: 100;
+      animation: popUp 0.3s ease;
+    }
+
+    @keyframes popUp {
+      from { transform: translate(-50%, -40%) scale(0.8); opacity: 0; }
+      to { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    }
+
+    .popup button {
+      background: #00ffff;
+      border: none;
+      color: #000;
+      padding: 8px 16px;
+      border-radius: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .popup button:hover {
+      background: #00d0d0;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -100,7 +140,24 @@
     <p>Sudah punya akun? <a onclick="showLogin()">Login Sekarang</a></p>
   </div>
 
+  <!-- Popup custom -->
+  <div class="popup" id="popupBox">
+    <p id="popupMessage"></p>
+    <button onclick="closePopup()">Oke</button>
+  </div>
+
   <script>
+    function showPopup(message) {
+      const popup = document.getElementById("popupBox");
+      const msg = document.getElementById("popupMessage");
+      msg.textContent = message;
+      popup.style.display = "block";
+    }
+
+    function closePopup() {
+      document.getElementById("popupBox").style.display = "none";
+    }
+
     function showRegister() {
       document.getElementById("loginBox").style.display = "none";
       document.getElementById("registerBox").style.display = "block";
@@ -111,38 +168,42 @@
       document.getElementById("loginBox").style.display = "block";
     }
 
-    // Simpan akun di localStorage
+    // Daftar akun (disimpan di localStorage)
     function register() {
       const user = document.getElementById("regUser").value;
       const pass = document.getElementById("regPass").value;
 
       if (user === "" || pass === "") {
-        alert("Isi semua kolom!");
+        showPopup("Isi semua kolom!");
         return;
       }
 
       if (localStorage.getItem(user)) {
-        alert("Username sudah dipakai!");
+        showPopup("Username sudah dipakai!");
       } else {
         localStorage.setItem(user, pass);
-        alert("Akun berhasil dibuat!");
-        showLogin();
+        showPopup("Akun berhasil dibuat!");
+        setTimeout(() => {
+          showLogin();
+        }, 1500);
       }
     }
 
-    // Login akun dari localStorage
+    // Login akun
     function login() {
       const user = document.getElementById("loginUser").value;
       const pass = document.getElementById("loginPass").value;
 
       const savedPass = localStorage.getItem(user);
       if (savedPass === null) {
-        alert("Akun tidak ditemukan!");
+        showPopup("Akun tidak ditemukan!");
       } else if (savedPass === pass) {
-        alert("Login berhasil! Selamat datang, " + user + "!");
-        window.location.href = "home.html"; // halaman selanjutnya
+        showPopup("Login berhasil! Selamat datang, " + user + "!");
+        setTimeout(() => {
+          window.location.href = "home.html";
+        }, 1500);
       } else {
-        alert("Password salah!");
+        showPopup("Password salah!");
       }
     }
   </script>
