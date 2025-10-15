@@ -1,43 +1,150 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tamanagung Location</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tamanagung.lock - Login</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #232526, #414345);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      width: 320px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #00ffff;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 10px;
+      outline: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      transition: background 0.3s;
+    }
+
+    input:focus {
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 15px;
+      border: none;
+      border-radius: 10px;
+      background: #00ffff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+    }
+
+    button:hover {
+      background: #00d0d0;
+      transform: scale(1.05);
+    }
+
+    p {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    a {
+      color: #00ffff;
+      cursor: pointer;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>Tamanagung Location</h1>
-    <nav>
-      <a href="#" class="nav-link active">Beranda</a>
-      <a href="#" class="nav-link">Tentang</a>
-      <a href="#" class="nav-link">Kontak</a>
-      <a href="#" id="loginBtn" class="nav-link">Login</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h2>Selamat Datang di Website Tamanagung 🌿</h2>
-    <p>Tempat informasi dan keindahan alam Desa Tamanagung.</p>
-    <button class="btn">Jelajahi Sekarang</button>
-  </section>
-
-  <footer>
-    <p>© 2025 <strong>Tamanagung Location</strong> | Dibuat oleh <em>sabillfm</em></p>
-  </footer>
-
-  <!-- Popup Login -->
-  <div id="loginPopup" class="popup">
-    <div class="popup-content animate">
-      <h3>Masuk ke Akun</h3>
-      <input type="text" placeholder="Username">
-      <input type="password" placeholder="Password">
-      <button class="btn">Masuk</button>
-      <button id="closePopup" class="btn-secondary">Tutup</button>
-    </div>
+  <div class="container" id="loginBox">
+    <h2>Login</h2>
+    <input type="text" id="loginUser" placeholder="Username" />
+    <input type="password" id="loginPass" placeholder="Password" />
+    <button onclick="login()">Masuk</button>
+    <p>Belum punya akun? <a onclick="showRegister()">Buat Akun</a></p>
   </div>
 
-  <script src="script.js"></script>
+  <div class="container" id="registerBox" style="display: none;">
+    <h2>Daftar Akun</h2>
+    <input type="text" id="regUser" placeholder="Buat Username" />
+    <input type="password" id="regPass" placeholder="Buat Password" />
+    <button onclick="register()">Daftar</button>
+    <p>Sudah punya akun? <a onclick="showLogin()">Login Sekarang</a></p>
+  </div>
+
+  <script>
+    function showRegister() {
+      document.getElementById("loginBox").style.display = "none";
+      document.getElementById("registerBox").style.display = "block";
+    }
+
+    function showLogin() {
+      document.getElementById("registerBox").style.display = "none";
+      document.getElementById("loginBox").style.display = "block";
+    }
+
+    // Simpan akun di localStorage
+    function register() {
+      const user = document.getElementById("regUser").value;
+      const pass = document.getElementById("regPass").value;
+
+      if (user === "" || pass === "") {
+        alert("Isi semua kolom!");
+        return;
+      }
+
+      if (localStorage.getItem(user)) {
+        alert("Username sudah dipakai!");
+      } else {
+        localStorage.setItem(user, pass);
+        alert("Akun berhasil dibuat!");
+        showLogin();
+      }
+    }
+
+    // Login akun dari localStorage
+    function login() {
+      const user = document.getElementById("loginUser").value;
+      const pass = document.getElementById("loginPass").value;
+
+      const savedPass = localStorage.getItem(user);
+      if (savedPass === null) {
+        alert("Akun tidak ditemukan!");
+      } else if (savedPass === pass) {
+        alert("Login berhasil! Selamat datang, " + user + "!");
+        window.location.href = "home.html"; // halaman selanjutnya
+      } else {
+        alert("Password salah!");
+      }
+    }
+  </script>
 </body>
 </html>
