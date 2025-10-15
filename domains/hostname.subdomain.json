@@ -1,0 +1,9 @@
+{
+    "owner": {
+        "username": "domains/hostname.subdomain.json",
+        "email": "[email protected]"
+    },
+    "records": {
+        "TXT": "35045eaeca7fa018bece95a7a234de"
+    }
+}
