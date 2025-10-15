@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Desa Tamanagung</title>
+  <title>Tamanagung.lock - Home</title>
   <style>
     * {
       margin: 0;
@@ -13,76 +13,77 @@
     }
 
     body {
-      background-color: #f5f1e6; /* warna duku lembut */
-      background-image: url('images/bg-tamanagung.jpg'); /* opsional: tambahkan foto latar */
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+      background-image: url("images/bg.jpg"); /* kalau mau pakai foto background */
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
-      color: #2e2a1f;
+      color: white;
+      height: 100vh;
+      overflow-x: hidden;
     }
 
     header {
-      background: rgba(99, 73, 46, 0.8);
-      color: #fff;
-      padding: 20px;
       text-align: center;
-      backdrop-filter: blur(5px);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
     }
 
     header h1 {
-      font-size: 2em;
-      margin-bottom: 5px;
+      font-size: 2.2em;
+      color: #00e1ff;
+      text-shadow: 0 0 10px #00e1ff;
       letter-spacing: 1px;
     }
 
-    header p {
-      font-size: 1em;
-      opacity: 0.9;
-    }
-
     nav {
-      background: #cdbb99;
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
       gap: 20px;
-      padding: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      padding: 15px;
+      background: rgba(0, 0, 0, 0.5);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     nav a {
+      color: white;
       text-decoration: none;
-      color: #3a2d1a;
       font-weight: 500;
-      padding: 8px 16px;
+      padding: 10px 20px;
       border-radius: 12px;
-      transition: 0.3s;
+      background: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
-      background: #7b5e36;
-      color: #fff;
+      background: rgba(0, 225, 255, 0.2);
+      box-shadow: 0 0 10px #00e1ff;
       transform: scale(1.05);
     }
 
     section {
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
 
     section h2 {
       font-size: 1.8em;
+      color: #00e1ff;
+      text-shadow: 0 0 10px #00e1ff;
       margin-bottom: 15px;
-      color: #3a2d1a;
     }
 
     section p {
+      font-size: 1.1em;
       max-width: 800px;
       margin: auto;
-      font-size: 1.1em;
-      line-height: 1.6;
-      color: #4b3e2a;
+      line-height: 1.7;
+      opacity: 0.9;
     }
 
     .galeri {
@@ -94,106 +95,115 @@
 
     .galeri img {
       width: 100%;
-      height: 180px;
+      height: 200px;
       object-fit: cover;
       border-radius: 15px;
       transition: 0.3s;
+      box-shadow: 0 0 10px rgba(0, 225, 255, 0.3);
     }
 
     .galeri img:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      box-shadow: 0 0 25px #00e1ff;
     }
 
     footer {
-      background: #3a2d1a;
-      color: #fff;
       text-align: center;
-      padding: 15px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      color: #ccc;
       font-size: 0.9em;
     }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5em;
-      }
-      nav {
-        gap: 10px;
-      }
+    a.kontak {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 25px;
+      color: #00e1ff;
+      border: 1px solid #00e1ff;
+      border-radius: 10px;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a.kontak:hover {
+      background: #00e1ff;
+      color: black;
+      box-shadow: 0 0 15px #00e1ff;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Desa Tamanagung</h1>
-    <p>Website Informasi Resmi | Bernuansa Duku & Alam</p>
+    <h1>Tamanagung.lock</h1>
   </header>
 
   <nav>
-    <a href="#tentang">Tentang Desa</a>
+    <a href="#tentang">Tentang</a>
     <a href="#lokasi">Lokasi</a>
     <a href="#layanan">Layanan</a>
-    <a href="#kontak">Kontak</a>
     <a href="#foto">Foto</a>
+    <a href="#kontak">Kontak</a>
   </nav>
 
   <section id="tentang">
     <h2>Tentang Desa Tamanagung</h2>
     <p>
-      Desa Tamanagung adalah salah satu desa di Kecamatan Cluring, Kabupaten Banyuwangi, 
-      yang dikenal dengan suasana alamnya yang asri dan masyarakatnya yang ramah.  
-      Website ini dibuat untuk memperkenalkan potensi dan kegiatan desa Tamanagung kepada masyarakat luas.
+      Desa Tamanagung adalah salah satu desa di Kecamatan Cluring, Banyuwangi.  
+      Dikenal karena alamnya yang sejuk, masyarakatnya yang ramah, dan keindahan pemandangan khas pedesaan.  
+      Website ini dibuat untuk memperkenalkan potensi dan kehidupan masyarakat Desa Tamanagung kepada semua orang.
     </p>
   </section>
 
   <section id="lokasi">
     <h2>Lokasi</h2>
     <p>
-      Desa Tamanagung terletak di wilayah selatan Kabupaten Banyuwangi, Jawa Timur.  
-      Berikut adalah lokasi desa kami di peta:
+      Desa Tamanagung terletak di wilayah selatan Kabupaten Banyuwangi.  
+      Klik tautan di bawah ini untuk melihat lokasi di Google Maps:
+      <br><br>
+      <a href="https://maps.app.goo.gl/FuDmxgH2hVZ3CpnZ8" class="kontak" target="_blank">📍 Lihat di Google Maps</a>
     </p>
-    <br>
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3946.411642738212!2d114.2634!3d-8.376!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd1450e4f86b5c5%3A0x4cf4bb69ce1ddc43!2sTamanagung%2C%20Cluring%2C%20Kabupaten%20Banyuwangi!5e0!3m2!1sid!2sid!4v123456789"
-      width="90%" height="300" style="border-radius:15px; border:none;" allowfullscreen="" loading="lazy">
-    </iframe>
   </section>
 
   <section id="layanan">
-    <h2>Layanan Desa</h2>
+    <h2>Layanan</h2>
     <p>
-      Kami menyediakan berbagai layanan administratif bagi warga Tamanagung, seperti:  
+      Desa Tamanagung melayani berbagai kebutuhan warga:  
       <br><br>
-      • Pembuatan surat keterangan domisili  
-      • Surat pengantar RT/RW  
-      • Pengurusan administrasi kependudukan  
-      • Informasi kegiatan masyarakat
-    </p>
-  </section>
-
-  <section id="kontak">
-    <h2>Kontak</h2>
-    <p>
-      Untuk pertanyaan atau informasi lebih lanjut, hubungi:  
-      <br><br>
-      📞 Kantor Desa: (0333) 456789  
+      • Surat keterangan domisili  
       <br>
-      📧 Email: <a href="mailto:desa.tamanagung@gmail.com">desa.tamanagung@gmail.com</a>
+      • Pengurusan administrasi kependudukan  
+      <br>
+      • Surat pengantar RT/RW  
+      <br>
+      • Informasi kegiatan desa
     </p>
   </section>
 
   <section id="foto">
-    <h2>Galeri Foto Desa</h2>
+    <h2>Galeri Foto</h2>
     <div class="galeri">
-      <img src="images/foto1.jpg" alt="Foto Desa 1">
-      <img src="images/foto2.jpg" alt="Foto Desa 2">
-      <img src="images/foto3.jpg" alt="Foto Desa 3">
-      <img src="images/foto4.jpg" alt="Foto Desa 4">
+      <img src="images/foto1.jpg" alt="Tamanagung 1">
+      <img src="images/foto2.jpg" alt="Tamanagung 2">
+      <img src="images/foto3.jpg" alt="Tamanagung 3">
+      <img src="images/foto4.jpg" alt="Tamanagung 4">
     </div>
   </section>
 
+  <section id="kontak">
+    <h2>Kontak Desa</h2>
+    <p>
+      Untuk informasi lebih lanjut, hubungi kami:  
+      <br><br>
+      📞 <strong>085648948001</strong>
+      <br><br>
+      <a href="https://wa.me/6285648948001" target="_blank" class="kontak">💬 Hubungi via WhatsApp</a>
+    </p>
+  </section>
+
   <footer>
-    <p>© 2025 Desa Tamanagung | Dibuat dengan ❤️ oleh SabilFM</p>
+    <p>© 2025 Tamanagung.lock | Dibuat oleh SabilFM</p>
   </footer>
 </body>
 </html>
