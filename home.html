@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tamanagung.lock - Home</title>
+  <title>Tamanagung.lock - Desa Tamanagung</title>
   <style>
     * {
       margin: 0;
@@ -13,40 +13,29 @@
     }
 
     body {
-      background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
-      background-image: url("images/bg.jpg"); /* kalau mau pakai foto background */
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      color: white;
-      height: 100vh;
-      overflow-x: hidden;
+      background-color: #f4f9ff;
+      color: #333;
     }
 
     header {
+      background: linear-gradient(90deg, #004aad, #0078d7);
+      color: white;
+      padding: 20px;
       text-align: center;
-      padding: 25px;
-      background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     header h1 {
-      font-size: 2.2em;
-      color: #00e1ff;
-      text-shadow: 0 0 10px #00e1ff;
+      margin-bottom: 5px;
+      font-size: 2em;
       letter-spacing: 1px;
     }
 
     nav {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      padding: 15px;
-      background: rgba(0, 0, 0, 0.5);
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      background: #0066cc;
+      padding: 10px 0;
     }
 
     nav a {
@@ -54,89 +43,95 @@
       text-decoration: none;
       font-weight: 500;
       padding: 10px 20px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
       transition: all 0.3s ease;
     }
 
     nav a:hover {
-      background: rgba(0, 225, 255, 0.2);
-      box-shadow: 0 0 10px #00e1ff;
+      background: white;
+      color: #004aad;
       transform: scale(1.05);
+    }
+
+    .hero {
+      background-image: url('images/bg-tamanagung.jpg'); /* ganti dengan foto desa */
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      color: white;
+      padding: 100px 20px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: auto;
     }
 
     section {
       padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    section h3 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #004aad;
+      font-size: 1.8em;
+      border-bottom: 3px solid #004aad;
+      display: inline-block;
+      padding-bottom: 5px;
+    }
+
+    .info, .layanan, .kontak {
+      margin-bottom: 60px;
       text-align: center;
     }
 
-    section h2 {
-      font-size: 1.8em;
-      color: #00e1ff;
-      text-shadow: 0 0 10px #00e1ff;
-      margin-bottom: 15px;
-    }
-
-    section p {
-      font-size: 1.1em;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.7;
-      opacity: 0.9;
-    }
-
-    .galeri {
+    .foto-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 15px;
-      margin-top: 25px;
     }
 
-    .galeri img {
+    .foto-grid img {
       width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 15px;
-      transition: 0.3s;
-      box-shadow: 0 0 10px rgba(0, 225, 255, 0.3);
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
     }
 
-    .galeri img:hover {
+    .foto-grid img:hover {
       transform: scale(1.05);
-      box-shadow: 0 0 25px #00e1ff;
     }
 
     footer {
+      background: #004aad;
+      color: white;
       text-align: center;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(8px);
-      color: #ccc;
+      padding: 15px;
       font-size: 0.9em;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    a.kontak {
-      display: inline-block;
-      margin-top: 15px;
-      padding: 10px 25px;
-      color: #00e1ff;
-      border: 1px solid #00e1ff;
-      border-radius: 10px;
+    footer a {
+      color: #ffee58;
       text-decoration: none;
-      transition: 0.3s;
-    }
-
-    a.kontak:hover {
-      background: #00e1ff;
-      color: black;
-      box-shadow: 0 0 15px #00e1ff;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Tamanagung.lock</h1>
+    <p>Desa Tamanagung - Kecamatan Cluring, Kabupaten Banyuwangi</p>
   </header>
 
   <nav>
@@ -147,63 +142,56 @@
     <a href="#kontak">Kontak</a>
   </nav>
 
-  <section id="tentang">
-    <h2>Tentang Desa Tamanagung</h2>
+  <div class="hero">
+    <h2>Selamat Datang di Desa Tamanagung 🌿</h2>
+    <p>Desa yang asri, damai, dan penuh dengan kehidupan masyarakat yang harmonis.</p>
+  </div>
+
+  <section id="tentang" class="info">
+    <h3>Tentang Desa</h3>
     <p>
-      Desa Tamanagung adalah salah satu desa di Kecamatan Cluring, Banyuwangi.  
-      Dikenal karena alamnya yang sejuk, masyarakatnya yang ramah, dan keindahan pemandangan khas pedesaan.  
-      Website ini dibuat untuk memperkenalkan potensi dan kehidupan masyarakat Desa Tamanagung kepada semua orang.
+      Desa Tamanagung merupakan salah satu desa di Kecamatan Cluring, Kabupaten Banyuwangi. 
+      Desa ini memiliki potensi alam dan budaya yang kuat, serta masyarakat yang ramah dan gotong royong.
     </p>
   </section>
 
-  <section id="lokasi">
-    <h2>Lokasi</h2>
+  <section id="lokasi" class="info">
+    <h3>Lokasi</h3>
     <p>
-      Desa Tamanagung terletak di wilayah selatan Kabupaten Banyuwangi.  
-      Klik tautan di bawah ini untuk melihat lokasi di Google Maps:
-      <br><br>
-      <a href="https://maps.app.goo.gl/FuDmxgH2hVZ3CpnZ8" class="kontak" target="_blank">📍 Lihat di Google Maps</a>
+      Desa Tamanagung terletak di wilayah selatan Kabupaten Banyuwangi, Jawa Timur.  
+      Lokasinya strategis dengan akses mudah ke jalan utama dan pusat kecamatan Cluring.
     </p>
   </section>
 
-  <section id="layanan">
-    <h2>Layanan</h2>
+  <section id="layanan" class="layanan">
+    <h3>Layanan</h3>
     <p>
-      Desa Tamanagung melayani berbagai kebutuhan warga:  
-      <br><br>
-      • Surat keterangan domisili  
-      <br>
-      • Pengurusan administrasi kependudukan  
-      <br>
-      • Surat pengantar RT/RW  
-      <br>
-      • Informasi kegiatan desa
+      - Pelayanan Administrasi Desa<br>
+      - Informasi Kependudukan<br>
+      - Pelayanan Surat Menyurat<br>
+      - Pengaduan dan Aspirasi Warga
     </p>
   </section>
 
-  <section id="foto">
-    <h2>Galeri Foto</h2>
-    <div class="galeri">
-      <img src="images/foto1.jpg" alt="Tamanagung 1">
-      <img src="images/foto2.jpg" alt="Tamanagung 2">
-      <img src="images/foto3.jpg" alt="Tamanagung 3">
-      <img src="images/foto4.jpg" alt="Tamanagung 4">
+  <section id="foto" class="galeri">
+    <h3>Galeri Foto</h3>
+    <div class="foto-grid">
+      <img src="images/foto1.jpg" alt="Pemandangan Desa">
+      <img src="images/foto2.jpg" alt="Kegiatan Warga">
+      <img src="images/foto3.jpg" alt="Balai Desa">
+      <img src="images/foto4.jpg" alt="Potensi Alam">
     </div>
   </section>
 
-  <section id="kontak">
-    <h2>Kontak Desa</h2>
-    <p>
-      Untuk informasi lebih lanjut, hubungi kami:  
-      <br><br>
-      📞 <strong>085648948001</strong>
-      <br><br>
-      <a href="https://wa.me/6285648948001" target="_blank" class="kontak">💬 Hubungi via WhatsApp</a>
-    </p>
+  <section id="kontak" class="kontak">
+    <h3>Kontak</h3>
+    <p>Hubungi kami melalui nomor berikut:</p>
+    <p><strong>📞 085648948001</strong></p>
   </section>
 
   <footer>
-    <p>© 2025 Tamanagung.lock | Dibuat oleh SabilFM</p>
+    <p>© 2025 Tamanagung.lock | Desa Tamanagung, Cluring, Banyuwangi</p>
+    <p>Dikelola oleh <a href="#">SabillFM</a></p>
   </footer>
 </body>
 </html>
