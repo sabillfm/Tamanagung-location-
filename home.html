@@ -1,197 +1,97 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tamanagung.lock - Desa Tamanagung</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamanagung.lock</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
     body {
-      background-color: #f4f9ff;
-      color: #333;
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom, #e8f5e9, #ffffff);
+      text-align: center;
+      color: #2e7d32;
     }
 
     header {
-      background: linear-gradient(90deg, #004aad, #0078d7);
+      background: #388e3c;
       color: white;
-      padding: 20px;
-      text-align: center;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px 0;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
     }
 
     header h1 {
-      margin-bottom: 5px;
-      font-size: 2em;
-      letter-spacing: 1px;
+      margin: 0;
+      font-size: 1.8rem;
     }
 
-    nav {
+    header p {
+      margin: 5px 0 0;
+      font-size: 0.9rem;
+    }
+
+    .welcome {
+      margin-top: 60px;
+      font-size: 1.8rem;
+      font-weight: 700;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    }
+
+    .subtitle {
+      font-size: 1rem;
+      color: #4caf50;
+      margin-bottom: 40px;
+    }
+
+    .menu-container {
       display: flex;
-      justify-content: center;
-      background: #0066cc;
-      padding: 10px 0;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 10px 20px;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover {
-      background: white;
-      color: #004aad;
-      transform: scale(1.05);
-    }
-
-    .hero {
-      background-image: url('images/bg-tamanagung.jpg'); /* ganti dengan foto desa */
-      background-size: cover;
-      background-position: center;
-      text-align: center;
-      color: white;
-      padding: 100px 20px;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    }
-
-    .hero h2 {
-      font-size: 2.5em;
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      font-size: 1.2em;
-      max-width: 600px;
-      margin: auto;
-    }
-
-    section {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    section h3 {
-      text-align: center;
-      margin-bottom: 20px;
-      color: #004aad;
-      font-size: 1.8em;
-      border-bottom: 3px solid #004aad;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    .info, .layanan, .kontak {
-      margin-bottom: 60px;
-      text-align: center;
-    }
-
-    .foto-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      flex-direction: column;
+      align-items: center;
       gap: 15px;
+      padding-bottom: 50px;
     }
 
-    .foto-grid img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    .menu-button {
+      width: 80%;
+      max-width: 320px;
+      background-color: #a5d6a7;
+      color: #1b5e20;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
       transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2);
     }
 
-    .foto-grid img:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      background: #004aad;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9em;
-      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    footer a {
-      color: #ffee58;
-      text-decoration: none;
-      font-weight: bold;
+    .menu-button:hover {
+      background-color: #81c784;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(76, 175, 80, 0.3);
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Tamanagung.lock</h1>
     <p>Desa Tamanagung - Kecamatan Cluring, Kabupaten Banyuwangi</p>
   </header>
 
-  <nav>
-    <a href="#tentang">Tentang</a>
-    <a href="#lokasi">Lokasi</a>
-    <a href="#layanan">Layanan</a>
-    <a href="#foto">Foto</a>
-    <a href="#kontak">Kontak</a>
-  </nav>
+  <main>
+    <h2 class="welcome">Selamat Datang di Desa Tamanagung 🌿</h2>
+    <p class="subtitle">Desa yang asri, damai, dan penuh dengan kehidupan masyarakat yang harmonis.</p>
 
-  <div class="hero">
-    <h2>Selamat Datang di Desa Tamanagung 🌿</h2>
-    <p>Desa yang asri, damai, dan penuh dengan kehidupan masyarakat yang harmonis.</p>
-  </div>
-
-  <section id="tentang" class="info">
-    <h3>Tentang Desa</h3>
-    <p>
-      Desa Tamanagung merupakan salah satu desa di Kecamatan Cluring, Kabupaten Banyuwangi. 
-      Desa ini memiliki potensi alam dan budaya yang kuat, serta masyarakat yang ramah dan gotong royong.
-    </p>
-  </section>
-
-  <section id="lokasi" class="info">
-    <h3>Lokasi</h3>
-    <p>
-      Desa Tamanagung terletak di wilayah selatan Kabupaten Banyuwangi, Jawa Timur.  
-      Lokasinya strategis dengan akses mudah ke jalan utama dan pusat kecamatan Cluring.
-    </p>
-  </section>
-
-  <section id="layanan" class="layanan">
-    <h3>Layanan</h3>
-    <p>
-      - Pelayanan Administrasi Desa<br>
-      - Informasi Kependudukan<br>
-      - Pelayanan Surat Menyurat<br>
-      - Pengaduan dan Aspirasi Warga
-    </p>
-  </section>
-
-  <section id="foto" class="galeri">
-    <h3>Galeri Foto</h3>
-    <div class="foto-grid">
-      <img src="images/foto1.jpg" alt="Pemandangan Desa">
-      <img src="images/foto2.jpg" alt="Kegiatan Warga">
-      <img src="images/foto3.jpg" alt="Balai Desa">
-      <img src="images/foto4.jpg" alt="Potensi Alam">
+    <div class="menu-container">
+      <button class="menu-button" onclick="location.href='tentang.html'">Tentang Desa</button>
+      <button class="menu-button" onclick="location.href='lokasi.html'">Lokasi</button>
+      <button class="menu-button" onclick="location.href='layanan.html'">Layanan</button>
+      <button class="menu-button" onclick="location.href='foto.html'">Foto</button>
+      <button class="menu-button" onclick="location.href='kontak.html'">Kontak</button>
     </div>
-  </section>
+  </main>
 
-  <section id="kontak" class="kontak">
-    <h3>Kontak</h3>
-    <p>Hubungi kami melalui nomor berikut:</p>
-    <p><strong>📞 085648948001</strong></p>
-  </section>
-
-  <footer>
-    <p>© 2025 Tamanagung.lock | Desa Tamanagung, Cluring, Banyuwangi</p>
-    <p>Dikelola oleh <a href="#">SabillFM</a></p>
-  </footer>
 </body>
 </html>
