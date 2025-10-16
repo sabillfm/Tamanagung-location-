@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galeri Foto - Tamanagung.lock</title>
+  <style>
+    body{margin:0;font-family:"Poppins",sans-serif;background:linear-gradient(to bottom,#e8f5e9,#ffffff);color:#2e7d32;text-align:center;}
+    header{background:#388e3c;color:white;padding:20px 0;}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;max-width:900px;margin:40px auto;padding:0 20px;}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:10px;box-shadow:0 4px 8px rgba(0,0,0,0.1);transition:.3s;}
+    .gallery img:hover{transform:scale(1.05);}
+    .back-btn{margin:30px auto 50px;width:200px;background:#a5d6a7;color:#1b5e20;border:none;border-radius:10px;padding:12px 0;font-weight:600;cursor:pointer;transition:.3s;}
+    .back-btn:hover{background:#81c784;transform:translateY(-3px);}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Tamanagung.lock</h1>
+    <p>Desa Tamanagung - Kecamatan Cluring, Kabupaten Banyuwangi</p>
+  </header>
+
+  <h2>Galeri Foto</h2>
+  <div class="gallery">
+    <img src="https://source.unsplash.com/400x300/?village,green" alt="Foto Desa">
+    <img src="https://source.unsplash.com/400x300/?nature,indonesia" alt="Pemandangan">
+    <img src="https://source.unsplash.com/400x300/?agriculture" alt="Pertanian">
+    <img src="https://source.unsplash.com/400x300/?river,forest" alt="Alam Desa">
+  </div>
+  <button class="back-btn" onclick="location.href='home.html'">← Kembali ke Beranda</button>
+</body>
+</html>
