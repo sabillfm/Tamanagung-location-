@@ -5,29 +5,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Layanan Desa - Tamanagung.lock</title>
   <style>
-    body{margin:0;font-family:"Poppins",sans-serif;background:linear-gradient(to bottom,#e8f5e9,#ffffff);color:#2e7d32;}
-    header{background:#388e3c;color:white;padding:20px 0;text-align:center;}
-    main{max-width:800px;margin:40px auto;background:white;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.1);padding:30px;}
-    ul{list-style-type:"🌿 ";padding-left:20px;color:#33691e;}
-    .back-btn{display:block;margin:40px auto 0;width:200px;background:#a5d6a7;color:#1b5e20;border:none;border-radius:10px;padding:12px 0;font-weight:600;cursor:pointer;transition:.3s;}
-    .back-btn:hover{background:#81c784;transform:translateY(-3px);}
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(to bottom, #e8f5e9, #ffffff);
+      color: #2e7d32;
+      text-align: center;
+    }
+
+    header {
+      background-color: #388e3c;
+      color: white;
+      padding: 20px 0;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 0.9rem;
+    }
+
+    main {
+      background-color: white;
+      width: 90%;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 30px 20px;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      color: #2e7d32;
+      font-size: 1.5rem;
+      margin-bottom: 25px;
+    }
+
+    .menu-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .menu-button {
+      width: 90%;
+      max-width: 400px;
+      background-color: #a5d6a7;
+      color: #1b5e20;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 0;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2);
+    }
+
+    .menu-button:hover {
+      background-color: #81c784;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(76, 175, 80, 0.3);
+    }
+
+    .menu-button:active {
+      transform: scale(0.97);
+      background-color: #66bb6a;
+      box-shadow: 0 3px 8px rgba(76, 175, 80, 0.4);
+    }
+
+    .back-button {
+      margin-top: 25px;
+      background-color: #a5d6a7;
+      color: #1b5e20;
+      border: none;
+      border-radius: 12px;
+      padding: 12px 26px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(76, 175, 80, 0.2);
+    }
+
+    .back-button:hover {
+      background-color: #81c784;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(76, 175, 80, 0.3);
+    }
+
+    .back-button:active {
+      transform: scale(0.97);
+      background-color: #66bb6a;
+      box-shadow: 0 3px 8px rgba(76, 175, 80, 0.4);
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Tamanagung.lock</h1>
     <p>Desa Tamanagung - Kecamatan Cluring, Kabupaten Banyuwangi</p>
   </header>
+
   <main>
     <h2>Layanan Desa</h2>
-    <ul>
-      <li>Pelayanan Administrasi Kependudukan (KTP, KK, Akta Kelahiran)</li>
-      <li>Pelayanan Surat Pengantar dan Domisili</li>
-      <li>Pelayanan Pertanian dan UMKM</li>
-      <li>Program Bantuan Sosial dan Kesejahteraan Masyarakat</li>
-      <li>Layanan Informasi Publik dan Kegiatan Desa</li>
-    </ul>
-    <button class="back-btn" onclick="location.href='home.html'">← Kembali ke Beranda</button>
+
+    <div class="menu-container">
+      <button class="menu-button" onclick="location.href='layanan-ktp.html'">
+        🌿 Pelayanan Administrasi Kependudukan (KTP, KK, Akta Kelahiran)
+      </button>
+      <button class="menu-button" onclick="location.href='layanan-domisili.html'">
+        🌿 Pelayanan Surat Pengantar dan Domisili
+      </button>
+      <button class="menu-button" onclick="location.href='layanan-umkm.html'">
+        🌿 Pelayanan Pertanian dan UMKM
+      </button>
+      <button class="menu-button" onclick="location.href='layanan-bansos.html'">
+        🌿 Program Bantuan Sosial dan Kesejahteraan Masyarakat
+      </button>
+      <button class="menu-button" onclick="location.href='layanan-info.html'">
+        🌿 Layanan Informasi Publik dan Kegiatan Desa
+      </button>
+    </div>
+
+    <button class="back-button" onclick="location.href='index.html'">
+      ← Kembali ke Beranda
+    </button>
   </main>
+
 </body>
 </html>
